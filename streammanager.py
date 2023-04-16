@@ -47,7 +47,7 @@ async def stream_overlay(websocket):
         websockets.broadcast(USERS, users_event())
 
 async def main():
-    async with websockets.serve(stream_overlay, 'localhost', 8001):
+    async with websockets.serve(stream_overlay, '0.0.0.0', 8001):
         await asyncio.Future()
 
 if __name__ == '__main__':
